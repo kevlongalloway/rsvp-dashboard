@@ -4,7 +4,6 @@ const cors     = require('cors');
 const { Pool } = require('pg');
 const nodemailer = require('nodemailer');
 const multer   = require('multer');
-const path     = require('path');
 
 const app    = express();
 const PORT   = process.env.PORT || 3000;
@@ -12,7 +11,6 @@ const upload = multer({ limits: { fileSize: 8 * 1024 * 1024 } });
 
 app.use(cors());
 app.use(express.json({ limit: '15mb' }));
-app.use(express.static(path.join(__dirname, 'public')));
 
 // ─── DATABASE ────────────────────────────────────────
 const pool = new Pool({
@@ -221,8 +219,6 @@ app.get('/api/export.csv', requireAuth, async (req, res) => {
     res.send(rows);
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
-
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 
 // ─── EMAIL ───────────────────────────────────────────
 async function sendNotification(rsvp, s) {
