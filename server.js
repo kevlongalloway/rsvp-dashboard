@@ -54,7 +54,7 @@ const DEFAULTS = {
   faq: JSON.stringify([
     { q: 'Is parking available?', a: 'Yes! The venue offers complimentary on-site parking in the open lot. Please feel free to park in any available space upon arrival.' },
     { q: 'Are children allowed?', a: 'Children are welcome at the ceremony (5 PM – 6 PM), but the reception is adults-only. We appreciate your understanding and hope you can arrange childcare for the evening.' },
-    { q: 'What is the dress code?', a: 'Black tie / formal. We'd love for everyone to dress up and celebrate with us in style!' },
+    { q: 'What is the dress code?', a: "Black tie / formal. We'd love for everyone to dress up and celebrate with us in style!" },
     { q: 'When is the RSVP deadline?', a: 'Please RSVP by December 18, 2026 so we can give our vendors accurate counts.' }
   ]),
   // Registry
