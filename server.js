@@ -11,6 +11,8 @@ const upload = multer({ limits: { fileSize: 8 * 1024 * 1024 } });
 
 app.use(cors());
 app.use(express.json({ limit: '15mb' }));
+app.use(express.static('public'));
+app.get('/dashboard', (req, res) => res.redirect('/dashboard.html'));
 
 // ─── DATABASE ────────────────────────────────────────
 const pool = new Pool({
